@@ -15,6 +15,13 @@ INSERT INTO emp VALUES (103, '박신입', '여자', null, '2023-10-01');
 
 SELECT * FROM emp;
 
+
+-- 급여가 가장 많은 사원을 검색하시오
+SELECT ename, salary
+from emp
+where salary = (select max(salary) from emp)
+   or salary = (select min(salary) from emp);
+
 -- 실습 문제 풀이
 -- 1.사원을 입사일 순으로 정렬하시오(오름차순 정렬)
 SELECT * FROM emp ORDER BY hire_date;
